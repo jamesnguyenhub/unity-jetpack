@@ -19,3 +19,6 @@ screenWidthInPoints = height * Camera.main.aspect;
 
 In other words, you need to enable it if your animation changes the object Transform. This is not the case right now, which is why you turned it off.
 Also since the game is using physics, it is a good idea to keep animations in sync with physics. This is why you check the Animate Physics checkbox.
+
+## Animation parameter
+You use a special parameter type called Trigger. Trigger parameters are very similar to Bool, with the exception that they are automatically reset after used
