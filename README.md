@@ -38,3 +38,5 @@ void OnTriggerEnter2D(Collider2D other) {
 ## Parallax
 Then select parallaxForeground in the Hierarchy. You will see that a Mesh Renderer component was added. Click on the Shader drop down and select Unlit\Transparent.
 
+Note: The Depth of the ParallaxCamera should be lower then Depth of Main Camera, so check your Main Camera Depth if required and adjust Depth of ParallaxCamera to be lower.
+
