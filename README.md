@@ -22,3 +22,15 @@ Also since the game is using physics, it is a good idea to keep animations in sy
 
 ## Animation parameter
 You use a special parameter type called Trigger. Trigger parameters are very similar to Bool, with the exception that they are automatically reset after used
+
+## Collision
+```java
+void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag("Coins")) {
+			coins++;
+			Destroy(other.gameObject);
+		} else {
+			HitByLaser(other);
+		}
+	}
+```
