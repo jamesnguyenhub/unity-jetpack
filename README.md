@@ -14,3 +14,29 @@ After selecting the pivot point hold down the left mouse button and start moving
 float height = 2.0f * Camera.main.orthographicSize;
 screenWidthInPoints = height * Camera.main.aspect;
 ```
+
+## Root motion
+
+In other words, you need to enable it if your animation changes the object Transform. This is not the case right now, which is why you turned it off.
+Also since the game is using physics, it is a good idea to keep animations in sync with physics. This is why you check the Animate Physics checkbox.
+
+## Animation parameter
+You use a special parameter type called Trigger. Trigger parameters are very similar to Bool, with the exception that they are automatically reset after used
+
+## Collision
+```java
+void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag("Coins")) {
+			coins++;
+			Destroy(other.gameObject);
+		} else {
+			HitByLaser(other);
+		}
+	}
+```
+
+## Parallax
+Then select parallaxForeground in the Hierarchy. You will see that a Mesh Renderer component was added. Click on the Shader drop down and select Unlit\Transparent.
+
+Note: The Depth of the ParallaxCamera should be lower then Depth of Main Camera, so check your Main Camera Depth if required and adjust Depth of ParallaxCamera to be lower.
+
